@@ -1,0 +1,11 @@
+{
+    "name": "Correctness",
+    "criteria": "Accuracy: The response should correctly address the question with precise facts and calculations.\nFactual Precision: Verify the correctness of facts, data, and the application of relevant laws or information.\nClarity and Accuracy: Information should be presented clearly, without errors or misrepresentations.\nRelevance: Ensure that all information provided is pertinent to the question and contributes to a correct understanding.",
+    "evaluation_steps": [
+        "Identify all factual claims within the 'actual output'. Using a chain-of-thought approach, list each discrete fact. For example, if the response states 'The land tax in Queensland for properties valued at X is Y%', note this as a factual claim that can be checked against the known data or the user’s expected output.",
+        "Verify each factual claim’s accuracy. Cross-check values against reliable sources (hypothetically) or the user-provided expected output. If dealing with known official tax schedules or widely documented details, ensure that no stated fact contradicts established data. The G-EVAL paper emphasizes factual correctness as critical for human alignment, especially when evaluating summarization and QAGS benchmarks.",
+        "Consider the severity of errors. A minor misstatement or a slight numerical inaccuracy may lower the score slightly, while a glaring factual error that changes the fundamental meaning or provides entirely false information should drastically reduce the correctness score.",
+        "Evaluate logical consistency as well. The response should not contain internal contradictions (e.g., stating both that land tax does not apply and then claiming it applies at a certain rate). According to G-EVAL guidelines, logical soundness underpins credibility and correctness."
+    ],
+    "evaluation_params": ["input", "actual_output"]
+}
